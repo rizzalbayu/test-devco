@@ -5,8 +5,11 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.get('/', (req, res) => {
+  res.json({ message: 'tes success' });
+});
+app.get('/halo', (req, res) => {
   res.json({ message: 'halo ges' });
 });
 app.use(UserRoute);
 
-app.listen(process.env.SERVER_PORT, () => console.log('server running'));
+app.listen(3030, () => console.log(`server running`));
